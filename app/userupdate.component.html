@@ -1,0 +1,37 @@
+<a routerLink="/users" routerLinkActive="active">Go Back to listing</a>
+<h3>
+    Update user:
+</h3>
+<table *ngIf="user">
+    <tr>
+        <td>
+            First Name:
+        </td>
+        <td>
+            <input [(ngModel)]="user.firstName" type="text"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Last Name:
+        </td>
+        <td>
+            <input [(ngModel)]="user.lastName" type="text"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Mobile:
+        </td>
+        <td>
+            <input [(ngModel)]="user.mobile" onkeypress="return event.charCode >= 48 && event.charCode <= 57" type="text"/>
+        </td>
+    </tr>
+        <tr>
+        <td>
+            <button (click)="updateUser(user)">
+                Update
+            </button>
+        </td>
+    </tr>
+</table>

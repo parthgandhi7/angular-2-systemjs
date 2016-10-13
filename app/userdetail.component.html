@@ -1,0 +1,48 @@
+<a routerLink="/users" routerLinkActive="active">Go Back to listing</a>
+<h3>
+    User Details:
+</h3>
+
+<ul *ngIf="user">
+    <li>
+        {{user.id}}) <b>Name:</b> {{user.name}}
+    </li>
+    <li>
+        <b>Mobile:</b> {{user.mobile}}
+    </li>
+    <li *ngIf="user.address">
+        <b>Address:</b>
+        <ul>
+            <li>
+                <b>line1:</b> {{user.address.line1}}
+            </li>
+            <li>
+                <b>city:</b> {{user.address.city}}
+            </li>
+            <li>
+                <b>state:</b> {{user.address.state}}
+            </li>
+        </ul>
+    </li>
+    <li *ngIf="user.pics">
+        <b>Pics</b>
+        <ul *ngFor="let pic of user.pics">
+            <li>
+               {{pic.id}}) <b>Name:</b> {{pic.url}}
+            </li>
+        </ul>
+    </li>
+    <li *ngIf="user.projects">
+        <b>Projects</b>
+        <ul *ngFor="let project of user.projects">
+            <li>
+                {{project.id}}) <b>Name:</b> {{project.name}}
+                <br />
+                <b>description:</b> {{project.description}}
+
+            </li>
+        </ul>
+    </li>
+ <button (click)="editUser(user)">Edit this user details</button> 
+
+</ul>

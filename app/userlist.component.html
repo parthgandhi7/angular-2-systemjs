@@ -1,0 +1,19 @@
+ <h3>Users:</h3>
+  <table border="1">
+  <tr>
+  <th>Id</th>
+  <th>Name</th>
+  <th>Mobile</th>
+  <th>Actions</th>
+</tr>
+<tr *ngFor="let user of users">
+<td> {{user.id}}</td>
+<td> {{user.firstName}} {{user.lastName}}</td>
+<td>{{user.mobile}}</td>
+<td> <button (click)="gotoDetail(user)">View Details</button> </td>
+</tr>
+
+</table>
+<a routerLink="/users/create" routerLinkActive="active">Create New User</a>
+<a routerLink="/users/observable" routerLinkActive="active">View users with observable</a>
+
